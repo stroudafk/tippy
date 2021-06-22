@@ -58,6 +58,20 @@
     
 }
 
+- (void) showLabels {
+    CGRect billFrame = self.billAmountField.frame;
+    billFrame.origin.y -= 200;
+    
+    self.billAmountField.frame = billFrame;
+    
+    CGRect labelsFrame = self.labelsContainerView.frame;
+    labelsFrame.origin.y -= 200;
+    
+    self.labelsContainerView.frame = labelsFrame;
+    
+    self.labelsContainerView.alpha = 3;
+}
+
 /*
 #pragma mark - Navigation
 
