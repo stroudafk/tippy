@@ -42,7 +42,7 @@ was new for me).
 List an 3rd party libraries, icons, graphics, or other assets you used in your app.
 
 - [AFNetworking](https://github.com/AFNetworking/AFNetworking) - networking task library
-- [coloors](https://coolors.co/00b9ae-037171-03312e-02c3bd-009f93) - color palette generator
+- [coolors](https://coolors.co/00b9ae-037171-03312e-02c3bd-009f93) - color palette generator
 - [Apple Developer](https://developer.apple.com/documentation/uikit/uitextfield#//apple_ref/occ/instp/UITextField/placeholder) - obj c reference
 
 ## License
