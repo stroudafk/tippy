@@ -19,6 +19,8 @@
 @implementation TipViewController
 
 - (void)viewDidLoad {
+    self.billAmountField.placeholder = @"$";
+    [self.billAmountField becomeFirstResponder];
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
@@ -29,6 +31,9 @@
 - (IBAction)updateLabels:(id)sender {
     if (self.billAmountField.text.length == 0){
         [self hideLabels];
+    }
+    else {
+        [self showLabels];
     }
     double tipPercentages[] = {0.15, 0.20, 0.25};
     double tipPercentage = tipPercentages[self.tipPercantageControl.selectedSegmentIndex];
@@ -41,7 +46,7 @@
     
 }
 - (void) hideLabels {
-    [UIView animateWithDuration:0.5 animations:^{
+    [UIView animateWithDuration:0.25 animations:^{
         CGRect billFrame = self.billAmountField.frame;
         billFrame.origin.y += 200;
         
@@ -53,23 +58,20 @@
         self.labelsContainerView.frame = labelsFrame;
         
         self.labelsContainerView.alpha = 0;
+        
+        
+        billFrame.origin.y -= 200;
+        labelsFrame.origin.y -= 200;
+        self.billAmountField.frame = billFrame;
+        self.labelsContainerView.frame = labelsFrame;
     }];
-    
-    
+
 }
 
 - (void) showLabels {
-    CGRect billFrame = self.billAmountField.frame;
-    billFrame.origin.y -= 200;
-    
-    self.billAmountField.frame = billFrame;
-    
-    CGRect labelsFrame = self.labelsContainerView.frame;
-    labelsFrame.origin.y -= 200;
-    
-    self.labelsContainerView.frame = labelsFrame;
-    
-    self.labelsContainerView.alpha = 3;
+    [UIView animateWithDuration:0.35 animations:^{
+        self.labelsContainerView.alpha = 3;
+    }];
 }
 
 /*
